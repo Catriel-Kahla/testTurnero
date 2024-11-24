@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="es">
+<head>
+    <META http-equiv=Content-Type content="text/html;charset=ISO-8859-1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="/turnero/css/style2.css">
+    <link href="/municipio2.0/main.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    
+    
+     
+    <!----===== Iconscout CSS ===== -->
+    
+
+    <!--<title>Admin Dashboard Panel</title>--> 
+</head>
+<body>
+    <nav>
+        <div class="logo-name">
+            <span class="logo_name">Men&uacute</span>
+        </div>
+
+        <div class="menu-items" id="menu">
+            
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>
+
+            <div class="text-right">
+                <h6 class="navbar-text text-primary mb-0" id="username">
+           
+                </h6>
+            </div>
+            
+            <!--<img src="images/profile.jpg" alt="">-->
+        </div>
+
+        
+        <div class="dash-content">
+            <div class="activity">
+                <div class="title">
+                    <span class="text">TURNO</span>
+                </div>
+            </div>
+
+            <div id="infoError">
+
+            </div>
+
+
+            <div class="position-relative form-row">
+                <div class="col-md-3">
+                    <label for="resumenText" class="font-weight-bold">Tipo de  Trámite</label>
+                    <div class="input-group mb-2">
+                        <select 
+                            name="tipoTramite" 
+                            id="tipoTramite" 
+                            class="form-control" 
+                            data-live-search="true" 
+                            required
+                        >
+                        </select>
+                        
+                    </div>
+                    <div id="requiredTipoTramite"></div>
+                </div>
+                <div class="col-md-4">
+                    <label for="resumenText" class="font-weight-bold">Clase Carnet</label>
+                    <div class="input-group mb-2">
+                        <select 
+                            name="tipoTramite" 
+                            id="tipoTramite" 
+                            class="form-control" 
+                            data-live-search="true" 
+                            required
+                        >
+                        </select>
+                        
+                    </div>
+                </div>
+                <div class="col-md-4 mt-3" style="display: none;">
+                    <label for="emisionText" class="font-weight-bold">Fecha Vencimiento</label>
+                    <input 
+                        name="fechaNacimiento" 
+                        id="fechaNacimiento" 
+                        placeholder="dd/mm/aaaa" 
+                        type="date" 
+                        class="form-control"
+                        required
+                        
+                    >
+                    <div id="requiredFechaVencimiento"></div>
+                </div>
+            </div>
+
+            <button 
+                class="btn btn-primary bg-mypage3 border border-white mt-4 p-3 rounded"  
+                style="width: 10rem;" 
+                id="create"
+                >Continuar
+            </button>
+            
+    
+
+        </div>
+        
+    </section>
+ 
+<script>
+    const body = document.querySelector("body"),
+  modeToggle = body.querySelector(".mode-toggle");
+  sidebar = body.querySelector("nav");
+  sidebarToggle = body.querySelector(".sidebar-toggle");
+
+let getMode = localStorage.getItem("mode");
+if(getMode && getMode ==="dark"){
+body.classList.toggle("dark");
+}
+
+let getStatus = localStorage.getItem("status");
+if(getStatus && getStatus ==="close"){
+sidebar.classList.toggle("close");
+}
+
+modeToggle.addEventListener("click", () =>{
+body.classList.toggle("dark");
+if(body.classList.contains("dark")){
+    localStorage.setItem("mode", "dark");
+}else{
+    localStorage.setItem("mode", "light");
+}
+});
+function arrow(e) {
+    console.log(e)
+}
+sidebarToggle.addEventListener("click", () => {
+sidebar.classList.toggle("close");
+if(sidebar.classList.contains("close")){
+    localStorage.setItem("status", "close");
+}else{
+    localStorage.setItem("status", "open");
+}
+})
+
+</script>
+<script src="/turnero/assets/scripts/main.js"></script>
+<script src="/turnero/constant/settingStart.js"></script>
+<script src="/turnero/controller/Individuos/Individuos.js"></script>
+<script>
+	window.addEventListener("load", function() { 
+        getBuildMain(); 
+       // getIndividuos();
+     //   getBuildMain();
+        //getTiposDocumentos(); 
+       // getNomencladorCalles();
+       // getLocalidades();
+        //getPaises();
+        //getEstadoCivil();
+});
+</script>
+</body>
+</html>
+  

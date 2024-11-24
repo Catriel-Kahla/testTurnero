@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="es">
+<head>
+    <META http-equiv=Content-Type content="text/html;charset=ISO-8859-1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="/turnero/css/style2.css">
+    <link href="/turnero/main.css" rel="stylesheet">
+    <link href="/turnero/alertify.css" rel="stylesheet">
+    <link href="/turnero/alertifyBoostrap.css" rel="stylesheet">
+    <script src="/turnero/alertify.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    
+    
+     
+    <!----===== Iconscout CSS ===== -->
+    
+
+    <!--<title>Admin Dashboard Panel</title>--> 
+</head>
+<body>
+    <nav>
+        <div class="logo-name">
+            <span class="logo_name">Men&uacute;</span>
+        </div>
+
+        <div class="menu-items" id="menu">
+            
+        </div> 
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <div class="activity">
+                <div class="title mb-1 mt-4">
+                    <h4 class="text-primary mt-0 ml-3 mb-0">Municipalidad de Perez</h4>
+                    <h5 class="text mt-0 mb-1 ml-3 text-secondary font-weight-bold">CARNET DE CONDUCIR - CONFIRMACION DE DATOS</h5>
+                </div>
+            </div>
+            <div class="text-right">
+                <h6 class="navbar-text text-primary mb-0" id="username">
+           
+                </h6>
+            </div>
+        </div>
+
+        
+        <div class="dash-content">
+            <div class="mt-5">
+                <div class="position-relative form-row">
+                    <div class="col-md-12 text-center" id="loading">
+                            <!-- Imagen procesando-->
+                    </div>
+                </div>
+
+                <div id="infoError">
+
+                </div>
+            </div>
+
+            <div class="position-relative form-row mt-2">
+                <div class="col-md-3">
+                    <label for="numeroLabel" class="font-weight-bold">Identificador</label>
+                    <div>
+                        <input 
+                            name="identificador"  
+                            id="identificador" 
+                            placeholder="Identificador"
+                            type="number" 
+                            class="form-control form-control"
+                            disabled
+                            required
+                        >
+                        <div id="requiredIdentificador"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="numeroLabel" class="font-weight-bold">Fecha</label>
+                    <div>
+                        <input 
+                            name="fecha"  
+                            id="fecha" 
+                            placeholder="dd/mm/aaaa"
+                            type="date" 
+                            class="form-control form-control"
+                            disabled
+                            required
+                        >
+                        <div id="requiredFecha"></div>
+                    </div>
+                </div>
+
+                
+                <div class="col-md-3">
+                    <label for="resumenText" class="font-weight-bold">Hora Turno</label>
+                    <input 
+                        name="hora" 
+                        id="hora" 
+                        placeholder="HH:MM" 
+                        type="text" 
+                        class="form-control form-control"
+                        disabled
+                    >
+                    <div id="requiredHora"></div>
+                </div>
+                
+
+            </div>
+
+
+            <div class="position-relative form-row mt-3">
+                <div class="col-md-3">
+                    <label for="resumenText" class="font-weight-bold">Tipo de  Documento</label>
+                    <div class="input-group">
+                        <select 
+                            name="tipoDocumento" 
+                            id="tipoDocumento" 
+                            class="form-control" 
+                            data-live-search="true" 
+                            required
+                        >
+                        </select>
+                        
+                    </div>
+                    <div id="requiredTipoDocumento"></div>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="numeroLabel" class="font-weight-bold">Documento</label>
+                    <div>
+                        <input 
+                            name="documento"  
+                            id="documento" 
+                            placeholder="Ingrese documento"
+                            type="text" 
+                            class="form-control form-control"
+                            onblur="getIndividuo()"
+                            required
+                        >
+                        <div id="requiredDocumento"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="numeroLabel" class="font-weight-bold">Apellido y Nombres</label>
+                    <div>
+                        <input 
+                            name="apellido"  
+                            id="apellido" 
+                            placeholder="Ingrese apellido"
+                            type="text" 
+                            class="form-control form-control"
+                            required
+                        >
+                        <div id="requiredNombre"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="position-relative form-row mt-3">
+                <div class="col-md-6">
+                    <label for="calleText" class="font-weight-bold">Domicilio Calle</label>
+                    <input 
+                        name="calle" 
+                        id="calle" 
+                        placeholder="Calle" 
+                        type="text" 
+                        class="form-control"
+                        required
+                    >
+                    <div id="requiredCalle"></div>
+                </div>
+
+                <div class="col-md-2">
+                    <label for="numeroText" class="font-weight-bold">N&uacutemero</label>
+                    <input 
+                        name="numeroCalle" 
+                        id="numeroCalle" 
+                        placeholder="99999" 
+                        type="number" 
+                        class="form-control"
+                        required
+                    >
+                    <div id="requiredNumeroCalle"></div>
+                </div>
+
+                <div class="col-md-2">
+                    <label for="pisoText" class="font-weight-bold">Piso</label>
+                    <input 
+                        name="pisoCalle" 
+                        id="pisoCalle" 
+                        placeholder="Piso" 
+                        type="number" 
+                        class="form-control"
+                    >
+                </div>
+
+                <div class="col-md-2">
+                    <label for="dptoText" class="font-weight-bold">Dpto.</label>
+                    <input 
+                        name="departamento" 
+                        id="departamento" 
+                        placeholder="Dpto." 
+                        type="text" 
+                        class="form-control"
+                    >
+                </div>
+            </div>
+
+            <div class="position-relative form-row mt-3">
+                <div class="col-md-6">
+                    <label for="resumenText" class="font-weight-bold">Localidad</label>
+                    <div class="input-group mb-2">
+                        <select 
+                            name="codigoPostal" 
+                            id="codigoPostal" 
+                            class="form-control" 
+                            data-live-search="true"
+                            required 
+                        >
+                        </select>
+                    </div>
+                    <div id="requiredCodigoPostal"></div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="resumenText" class="font-weight-bold">Nacionalidad</label>
+                    <div class="input-group mb-2">
+                        <select 
+                            name="codigoPais" 
+                            id="codigoPais" 
+                            class="form-control" 
+                            data-live-search="true" 
+                        >
+                        </select>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="position-relative form-row mt-3">
+                <div class="col-md-4">
+                    <label for="emisionText" class="font-weight-bold">Fecha Nacimiento</label>
+                    <input 
+                        name="fechaNacimiento" 
+                        id="fechaNacimiento" 
+                        placeholder="dd/mm/aaaa" 
+                        type="date" 
+                        class="form-control"
+                        required
+                    >
+                    <div id="requiredFechaNacimiento"></div>
+                </div>
+
+                <div class="col-md-8">
+                    <label for="resumenText" class="font-weight-bold">Estado Civil</label>
+                    <div class="input-group mb-2">
+                        <select 
+                            name="codigoCivil" 
+                            id="codigoCivil" 
+                            class="form-control" 
+                            data-live-search="true" 
+                        >
+                        </select>
+                        
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="position-relative form-row mt-3">
+                <div class="col-md-6">
+                    <label for="mailText" class="font-weight-bold">Mail</label>
+                    <input 
+                        name="email" 
+                        id="email" 
+                        placeholder="mail@mail.com" 
+                        type="text" 
+                        class="form-control"
+                        required
+                    >
+                    <div id="requiredEmail"></div>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="celularText" class="font-weight-bold">Celular</label>
+                    <input 
+                        name="celu" 
+                        id="celu" 
+                        placeholder="Celular" 
+                        type="text" 
+                        class="form-control"
+                        required
+                    >
+                    <div id="requiredCelu"></div>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="fijoText" class="font-weight-bold">Tel&eacutefono</label>
+                    <input 
+                        name="fijo" 
+                        id="fijo" 
+                        placeholder="Fijo" 
+                        type="text" 
+                        class="form-control"
+                    >
+                </div>
+
+            </div>
+        </div>
+
+            <div class="position-relative form-row mt-3">
+                <div class="col-md-12">
+                    <label for="numeroLabel" class="font-weight-bold">Descripci&oacuten</label>
+                    <div>
+                        <input 
+                            name="descripcion"  
+                            id="descripcion" 
+                            placeholder="Ej. Nuevo B1, Renovacion A21"
+                            type="text" 
+                            class="form-control form-control"
+                            required
+                        >
+                        <div id="requiredNombreTurno"></div>
+                    </div>
+                    
+                </div>
+            </div>
+                
+            
+
+            <hr class="my-0 mt-4">
+            
+            <button class="btn btn-primary mt-2"  style="width: 10rem;" id="btn-create">Guardar Cambios</button>
+            <button class="btn btn-danger mt-2" style="width: 6rem;" type="button" onclick="location.href='javascript:history.back()'" target="_blank">Cancelar</button>
+            
+    
+
+        </div>
+        
+    </section>
+ 
+<script>
+    const body = document.querySelector("body"),
+  modeToggle = body.querySelector(".mode-toggle");
+  sidebar = body.querySelector("nav");
+  sidebarToggle = body.querySelector(".sidebar-toggle");
+
+let getMode = localStorage.getItem("mode");
+if(getMode && getMode ==="dark"){
+body.classList.toggle("dark");
+}
+
+let getStatus = localStorage.getItem("status");
+if(getStatus && getStatus ==="close"){
+sidebar.classList.toggle("close");
+}
+
+modeToggle.addEventListener("click", () =>{
+body.classList.toggle("dark");
+if(body.classList.contains("dark")){
+    localStorage.setItem("mode", "dark");
+}else{
+    localStorage.setItem("mode", "light");
+}
+});
+function arrow(e) {
+    console.log(e)
+}
+sidebarToggle.addEventListener("click", () => {
+sidebar.classList.toggle("close");
+if(sidebar.classList.contains("close")){
+    localStorage.setItem("status", "close");
+}else{
+    localStorage.setItem("status", "open");
+}
+})
+
+</script>
+
+<script src="/turnero/assets/scripts/main.js"></script>
+<script src="/turnero/constant/settingStart.js"></script>
+<script src="/turnero/controller/Turnos/TurnosCharla.js"></script>
+<script>
+	window.addEventListener("load", function() { 
+        getTurno();
+        getBuildMain();
+        //getTiposDocumentos(); 
+       // getNomencladorCalles(); 
+       // getLocalidades();
+        //getPaises();
+        //getEstadoCivil();
+});
+</script>
+</body>
+</html>
+  

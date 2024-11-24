@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="es">
+<head>
+    <META http-equiv=Content-Type content="text/html;charset=ISO-8859-1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="/turnero/css/style2.css">
+    <link href="/turnero/main.css" rel="stylesheet">
+    <link href="/turnero/alertify.css" rel="stylesheet">
+    <link href="/turnero/alertifyBoostrap.css" rel="stylesheet">
+    <script src="/turnero/alertify.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+<body>
+    <nav>
+        <div class="logo-name">
+            <span class="logo_name">Men&uacute</span>
+        </div>
+
+        <div class="menu-items" id="menu">
+            <!-- Muestra menu -->            
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <div class="activity">
+                <div class="title mb-1 mt-4">
+                    <h4 class="text-primary mt-0 ml-3 mb-0">Municipalidad de Perez</h4>
+                    <h5 class="text mt-0 mb-1 ml-3 text-secondary font-weight-bold">CARNET DE CONDUCIR - NUEVA CLASES </h5>
+                </div>
+            </div>
+            <div class="text-right">
+                <h6 class="navbar-text text-primary mb-0" id="username">
+           
+                </h6>
+            </div>
+        </div>
+
+        <div class="dash-content">
+            <div class="mt-5">
+                <div class="position-relative form-row">
+                    <div class="col-md-12 text-center" id="loading">
+                            <!-- Imagen procesando-->
+                    </div>
+                </div>
+
+                <div id="informe" class="text-danger">
+
+                </div>
+            </div>
+
+            <div class="position-relative form-row">
+                <div class="col-md-3 mt-3">
+                    <label for="numeroLabel" class="">Identificador</label>
+                    <div>
+                        <input 
+                            name="identificador"  
+                            id="identificador" 
+                            placeholder="Identificador"
+                            type="number" 
+                            class="form-control"
+                            disabled
+                            required
+                        >
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="position-relative form-row">
+                <div class="col-md-6 mt-3">
+                    <label for="numeroLabel" class="">Clase</label>
+                    <div>
+                        <input 
+                            name="clase"  
+                            id="clase" 
+                            placeholder="Clase Carnet"
+                            type="text" 
+                            class="form-control"
+                            autofocus
+                            required
+                        >
+                    </div>
+                </div>
+                <div class="col-md-3 mt-3">
+                    <label for="numeroLabel" class="">Edad M&iacutenima</label>
+                    <div>
+                        <input 
+                            name="edad"  
+                            id="edad" 
+                            placeholder="Edad M&iacute;nima"
+                            type="number" 
+                            class="form-control"
+                        >
+                    </div>
+                </div>
+                <div class="col-md-2 ml-5 mt-5">
+                    <label class="">
+                        <input 
+                            type="checkbox" 
+                            class="form-check-input" 
+                            id="habilitado"
+                        >
+                        Habilitado
+                    </label>
+                </div>
+            </div>
+                
+            <div class="position-relative form-row">
+                <div class="col-md-12 mt-3">
+                    <label for="resumenText" class="">Veh&iacuteculo</label>
+                    <input 
+                        name="vehiculo" 
+                        id="vehiculo" 
+                        placeholder="Ingres&aacute Veh&iacute;culo al que habilita la clase" 
+                        type="text" 
+                        class="form-control"
+                    >
+                </div>
+
+            </div>
+
+            <div class="position-relative form-row">
+                <div class="col-md-12 mt-3">
+                    <label for="resumenText" class="">Descripci&oacuten</label>
+                    <div>
+                        <textarea 
+                            name="descripcion" 
+                            id="descripcion" 
+                            placeholder="Ingres&aacute una descripci&oacute;n" 
+                            type="text" 
+                            class="form-control" 
+                        >
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="position-relative form-row">
+                <div class="col-md-12">
+                    <label for="resumenText" class="">Requisitos</label>
+                    <div>
+                        <textarea 
+                            name="requisitos" 
+                            id="requisitos" 
+                            placeholder="Ingres&aacute Requisitos" 
+                            type="text" 
+                            class="form-control" 
+                        >
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4">
+            
+            <button class="btn btn-primary mt-2"  style="width: 10rem;" id="update">Guardar Cambios</button>
+            <button class="btn btn-danger mt-2" style="width: 6rem;" type="button" onclick="location.href='javascript:history.back()'" target="_blank">Cancelar</button>
+        </div>
+    </section>
+<script src="/turnero/assets/scripts/main.js"></script>
+<script src="/turnero/constant/settingStart.js"></script>
+<script src="/turnero/controller/Administracion/ClasesCarnetController.js"></script>
+<script>
+	window.addEventListener("load", function() { 
+        getBuildMain();
+        getClase();
+    });
+</script>
+</body>
+</html>
+  

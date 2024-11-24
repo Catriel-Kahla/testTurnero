@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/styleMain.css"> <!-- Local -->
+	<link rel="stylesheet" href="main.css"> <!-- Local -->
+    <!-- <link href="/turnero/main.css" rel="stylesheet"> Serv -->
+	<!-- <link href="/turnero/css/styleMain.css" rel="stylesheet"> Serv -->
+    
+    <title>Municipalidad de Pérez | Log In</title>
+</head>
+<body>
+
+    <div class="container-fluid">
+
+		<header class="container">
+			<h2 class="font-weight-normal text-muted text-center mt-4" id="title">Municipalidad de Pérez</h2>
+			 <p class="text-center">
+				<h4 id="passwordHelpInline" class="text-muted text-center mt-0"> Turnos Web </h4>
+			</p>
+			<div id="loading">
+				<!-- Imagen procesando-->
+			</div>
+			
+ 			<hr>
+		</header>
+
+
+		
+		<main class="container">
+
+			<div class="container-fluid d-flex justify-content-around"  id="mainBlock">
+
+				<button type="button" class="btn btn-primary btn-idx" id="openLogInBut">Iniciar Sesión</button>
+
+				<button type="button" class="btn btn-primary btn-idx" id="openRegBut">Registrarse</button>
+
+			</div>
+
+			<div id="infoErrorReg"></div>
+		</main>
+
+		
+		<footer class="container mt-5">
+			<p class="text-center">
+				<small id="passwordHelpInline" class="text-muted">
+					<blockquote class="blockquote text-center">
+						<p>Reservá un turno para ser atendido en las distintas oficinas del municipio.</p> 
+						<p class="mt-4"><u>OFICINAS HABILITADAS</u></p> 
+						<footer class="blockquote-footer">Carnet de Conducir</footer> 
+						<!--<footer class="blockquote-footer">Proximamente mas oficinas </footer> -->
+					  </blockquote> 
+				</small>
+			</p>
+		</footer>
+		
+	</div>
+<!--<script src="/turnero/constant/settingStart.js"></script>
+<script src="/turnero/controller/Sesion/Sesion.js"></script> --> <!-- Serv -->
+<script src="constant/settingStart.js"></script> <!-- Local -->
+<script src="controller/Sesion/Sesion.js"></script> <!-- Local -->
+<script>
+    window.addEventListener("load", function() { 
+    //getStart();
+    
+});
+</script>
+</body>
+</html>

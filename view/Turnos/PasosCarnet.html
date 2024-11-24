@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="es">
+<head>
+    <META http-equiv=Content-Type content="text/html;charset=ISO-8859-1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="/turnero/css/style2.css">
+    <link href="/turnero/main.css" rel="stylesheet">
+    <link href="/turnero/alertify.css" rel="stylesheet">
+    <link href="/turnero/alertifyBoostrap.css" rel="stylesheet">
+    <script src="/turnero/alertify.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    
+    
+     
+    <!----===== Iconscout CSS ===== -->
+    
+
+    <!--<title>Admin Dashboard Panel</title>--> 
+</head>
+<body>
+    <nav>
+        <div class="logo-name">
+            <span class="logo_name">Men&uacute;</span>
+        </div>
+
+        <div class="menu-items" id="menu">
+            
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <div class="activity">
+                <div class="title mb-1  mt-4">
+                    <h4 class="text-primary mt-0 ml-3 mb-0">Municipalidad de Perez</h4>
+                    <h5 class="text mt-0 mb-1 ml-3 text-secondary font-weight-bold">Pasos para Obtener o Renovar Carnet de Conducir</h5>
+                </div>
+            </div>
+            <div class="text-right">
+                <h6 class="navbar-text text-primary mb-0" id="username">
+           
+                </h6>
+            </div>
+        </div>
+
+        
+        <div class="dash-content mt-5">
+            <div class="position-relative form-row mt-4">
+                <div class="col-md-12 text-center" id="loading">
+                         <!-- Imagen procesando-->
+                </div>
+            </div>
+
+            <div id="infoError">
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Paso 1: Charla Virtual</h4>
+                    <p>Si est&aacute;s solicitando un carnet de conducir <strong>NUEVO</strong> o si tu carnet anterior ha <strong>VENCIDO 
+                      HACE M&Aacute;S DE UN A&ntilde;O</strong>, 
+                      el primer paso es participar en una charla virtual. Durante esta charla, recibir&aacute;s informaci&oacute;n importante 
+                      sobre las normativas de tr&aacute;nsito y seguridad vial. Es fundamental asistir y aprobar esta charla para avanzar en el proceso.
+                      <a href="TurnosCharlaSelect.html"> (Sacar turno).</a>  
+                    </p>
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Paso 2: Capacitaci&oacute;n Te&oacute;rico-Pr&aacute;ctico Virtual Nacional</h4>
+                    <p>Si est&aacute;s obteniendo un carnet <strong>NUEVO</strong> para veh&iacute;culos automotores (autos o motos) y tienes 
+                        <strong>ENTRE 18 y 21 A&Ntilde;OS</strong>, 
+                        deber&aacute;s completar una capacitaci&oacute;n te&oacute;rico-pr&aacute;ctico en l&iacute;nea. 
+                        Te proporcionaremos un enlace donde podr&aacute;s realizar este examen. 
+                        Al aprobarlo, recibir&aacute;s un certificado. <a href="https://www.argentina.gob.ar/servicio/mi-primera-licencia" target="_blank">Ir a la capacitaci&oacute;n</a></p> 
+
+                     <p>Si tienes <strong>M&Aacute;S DE 21 A&Ntilde;OS</strong>, tambi&eacute;n deber&aacute;s completar una capacitaci&oacute;n te&oacute;rico-pr&aacute;ctico, 
+                        pero utilizando otro enlace. Al igual que en el caso anterior, al aprobarlo, recibir&aacute;s un certificado.
+                        <a href="https://curso.seguridadvial.gob.ar" target="_blank">Ir a la capacitaci&oacute;n</a>
+                    </p>
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Paso 3: Sacar Turno para el Tr&aacute;mite</h4>
+                    <p>Despu&eacute;s de haber aprobado la charla virtual y/o la capacitaci&oacute;n te&oacute;rico-pr&aacute;ctico virtual nacional, 
+                        si corresponden a tu situaci&oacute;n, puedes avanzar al paso 3. 
+                        En este paso, debes <a href="Turnos.html">Sacar turno</a> para realizar el tr&aacute;mite de carnet de conducir.
+                        Por favor, ten en cuenta que si tu carnet anterior venci&oacute; hace menos de un a&ntilde;o y no necesitas la charla ni
+                        la capacitaci&oacute;n, puedes omitir los pasos 1 y 2 y proceder directamente al paso 3. </p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+ 
+<script>
+    const body = document.querySelector("body"),
+  modeToggle = body.querySelector(".mode-toggle");
+  sidebar = body.querySelector("nav");
+  sidebarToggle = body.querySelector(".sidebar-toggle");
+
+let getMode = localStorage.getItem("mode");
+if(getMode && getMode ==="dark"){
+body.classList.toggle("dark");
+}
+
+let getStatus = localStorage.getItem("status");
+if(getStatus && getStatus ==="close"){
+sidebar.classList.toggle("close");
+}
+
+modeToggle.addEventListener("click", () =>{
+body.classList.toggle("dark");
+if(body.classList.contains("dark")){
+    localStorage.setItem("mode", "dark");
+}else{
+    localStorage.setItem("mode", "light");
+}
+});
+function arrow(e) {
+    console.log(e)
+}
+sidebarToggle.addEventListener("click", () => {
+sidebar.classList.toggle("close");
+if(sidebar.classList.contains("close")){
+    localStorage.setItem("status", "close");
+}else{
+    localStorage.setItem("status", "open");
+}
+})
+
+</script>
+
+<script src="/turnero/assets/scripts/main.js"></script>
+<script src="/turnero/constant/settingStart.js"></script>
+<script src="/turnero/controller/Administracion/TurnosController.js"></script>
+<script>
+	window.addEventListener("load", function() { 
+        getBuildMain();
+        getTurno();
+        //getTiposDocumentos(); 
+       // getNomencladorCalles();
+       // getLocalidades();
+        //getPaises();
+        //getEstadoCivil();
+});
+</script>
+</body>
+</html>

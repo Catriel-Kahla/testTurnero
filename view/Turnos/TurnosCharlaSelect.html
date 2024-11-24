@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="es">
+<head>
+    <META http-equiv=Content-Type content="text/html;charset=ISO-8859-1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="/turnero/css/style2.css">
+    <link href="/turnero/main.css" rel="stylesheet">
+    <link href="/turnero/alertify.css" rel="stylesheet">
+    <link href="/turnero/alertifyBoostrap.css" rel="stylesheet">
+    <script src="/turnero/alertify.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <style>
+        @keyframes iconBlink {
+            0%, 100% {
+            opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+        .icon-titling {
+            animation: iconBlink 1s infinite;
+        }
+    </style> 
+</head>
+<body>
+    <nav>
+        <div class="logo-name">
+            <span class="logo_name">Men&uacute</span>
+        </div>
+
+        <div class="menu-items" id="menu">
+            
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <div class="activity">
+                <div class="title mb-1 mt-4">
+                    <h4 class="text-primary mt-0 ml-3 mb-0">Municipalidad de Perez</h4>
+                    <h5 class="text mt-0 mb-1 ml-3 text-secondary font-weight-bold">CARNET DE CONDUCIR - TURNOS CHARLAS</h5>
+                </div>
+            </div>
+            <div class="text-right">
+                <h6 class="navbar-text text-primary mb-0" id="username">
+           
+                </h6>
+            </div>
+        </div>
+
+        <div class="dash-content">
+            <div class="mt-5">
+
+                <div class="alert alert-info alert-dismissible fade show text-left">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p><strong><i class="fas fa-exclamation-triangle fa-lg mr-2 icon-titling"></i>ADVERTENCIA! - Antes de sacar tu turno!</strong></p>
+                    <p>Por favor, antes de continuar, aseg&uacute;rate de revisar los horarios de las charlas para obtener tu carnet de conducir:</p>
+                    <ul>
+                        <li class="ml-5"><strong>Lunes y Mi&eacute;rcoles:</strong> Charlas para carnet de conducir general.</li>
+                        <li class="ml-5"><strong>Martes y Jueves:</strong> Charlas para carnet de conducir de moto.</li>
+                        <li class="ml-5"><strong>Segundo y Cuarto Viernes de cada mes:</strong> Charlas para carnet de conducir profesional.</li>
+                    </ul>
+
+                    <p>Estos d&iacute;as y horarios est&aacute;n disponibles para que puedas programar tu turno de manera conveniente. 
+                       No olvides que tambi&eacute;n es importante conocer los requisitos y <a href="PasosCarnet.html">Pasos para Obtener o Renovar el Carnet de Conducir</a> 
+                       en el men&uacute; "Pasos Carnet" antes de proceder.
+                       Estos pasos te ayudar&aacute;n a conocer las condiciones y requisitos previos necesarios para obtener
+                       o renovar tu carnet de conducir.</p>
+                </div>
+
+                <div id="informacion">
+
+                </div>
+                <div id="infoError">
+
+                </div>
+
+                
+
+
+                <div class="col-md-5">
+                    <label for="resumenText" class="font-weight-bold">Tipo de Charla</label>
+                    <div class="input-group">
+                        <select 
+                            name="tipoCharla" 
+                            id="tipoCharla" 
+                            class="form-control" 
+                            data-live-search="true" 
+                            required
+                        >
+
+                        <option value="">-- Seleccione Tipo de Charla -- </option>
+                        <option value="1">Charla Carnet General</option>
+                        <option value="2">Charla Carnet Moto</option>
+                        <option value="3">Charla Carnet Profesional</option>
+                        </select>
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" id="continuarButton" type="button">Continuar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            
+            <hr class="my-0 mt-4">
+
+            
+    
+        </div>
+        
+    </section>
+ 
+    <script src="/turnero/assets/scripts/main.js"></script>
+<script src="/turnero/constant/settingStart.js"></script>
+<script src="/turnero/controller/Turnos/TurnosCharla.js"></script>
+<script>
+	window.addEventListener("load", function() { 
+        getBuildMain(); 
+        
+    });
+</script>
+
+
+</body> 
+</html>

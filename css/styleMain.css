@@ -1,0 +1,73 @@
+
+.container-fluid{
+    padding: 0;
+}
+
+main{
+    margin-top: 5vh;
+}
+
+.principalBox{
+    z-index: 150;
+    width: 30vw;
+    height: 40vh;
+    padding: 3vh 1vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top: 3%;
+}
+
+#mainBlock{
+    height: auto;
+    z-index: 1;
+    margin: 0;
+}
+
+#indexBackBut{
+    margin-top: 1vh;
+}
+
+.btn-idx{
+    height: 6vh;
+    width: 20vw;
+}
+
+.divAlign{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    
+    .principalBox{
+        margin: 0;
+        width: 55vw;
+    }
+
+    .principalBox input{
+        width: 70vw;
+        
+    }
+
+
+    #mainBlock{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .btn-idx{
+        height: 5vh;
+        width: 51vw;
+    }
+
+    #openRegBut{
+        margin-top: 2vh;
+    }
+}

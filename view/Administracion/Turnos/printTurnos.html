@@ -1,0 +1,61 @@
+<!-- FIJO -  CABECERA Y MENU -->
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>MuniciPio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <meta name="msapplication-tap-highlight" content="no">
+    <link href="/turnero/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <!--  FIN CABECERA Y MENU -->
+
+    <!--  SECCION MODIFICABLE PARA CADA PAGINA -->
+
+    <div class="app-main__inner">
+        <div class="row">
+            <div class="col-md-12">
+
+
+                <form class="" autocomplete="off">
+                    <div>
+                        <p class="text-danger small" id="informe">
+                            <!-- NOTIFICACIONES -->
+                        </p>
+                    </div>
+                    <div class="position-relative form-row mt-4">
+                        <div class="col-md-12 text-center" id="loading">
+                            <!-- Imagen procesando-->
+                        </div>
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <!-- FIN SECCION MODIFICACBLE -->
+
+
+    <script src="/turnero/assets/scripts/main.js"></script>
+    <script src="/turnero/constant/settingStart.js"></script>
+    <script src="/turnero/controller/Administracion/TurnosController.js"></script>
+    <script>
+        window.addEventListener("load", function() { 
+            getPrint();
+            
+    });
+    </script>
+    
+    
+    </body>
+    </html>
